@@ -13,11 +13,11 @@ export function SignIn() {
 	async function handleSignIn(event: FormEvent) {
 		event.preventDefault();
 
+		setIsUserSignedIn(true);
 		await axios.post("/sessions", {
 			email: "mateus.vallim@gmail.com",
 			password: "12345",
 		});
-		setIsUserSignedIn(true);
 	}
 	return (
 		<div className="w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
